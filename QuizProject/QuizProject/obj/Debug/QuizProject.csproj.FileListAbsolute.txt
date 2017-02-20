@@ -16,3 +16,21 @@ C:\CPA\Sem 5\INFO5102 GUI Development\QuizProject\QuizProject\obj\Debug\QuizProj
 C:\CPA\Sem 5\INFO5102 GUI Development\QuizProject\QuizProject\obj\Debug\QuizProject.csproj.GenerateResource.Cache
 C:\CPA\Sem 5\INFO5102 GUI Development\QuizProject\QuizProject\obj\Debug\QuizProject.exe
 C:\CPA\Sem 5\INFO5102 GUI Development\QuizProject\QuizProject\obj\Debug\QuizProject.pdb
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\bin\Debug\QuizProject.exe.config
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.exe
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.pdb
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\bin\Debug\QuizProject.exe
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\bin\Debug\QuizProject.pdb
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.csprojResolveAssemblyReference.cache
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\IntroWindow.g.cs
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\MainWindow.g.cs
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\ReportWindow.g.cs
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\App.g.cs
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject_MarkupCompile.cache
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject_MarkupCompile.lref
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\IntroWindow.baml
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\MainWindow.baml
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\ReportWindow.baml
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.g.resources
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.Properties.Resources.resources
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.csproj.GenerateResource.Cache
