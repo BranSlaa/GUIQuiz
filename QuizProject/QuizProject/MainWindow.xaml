@@ -4,9 +4,53 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:QuizProject"
+		WindowStartupLocation="CenterScreen"
 		mc:Ignorable="d"
-		Title="MainWindow" Height="350" Width="525">
+		Title="The Quiz"
+		Height="800" Width="700"
+		Background="#257985"
+		>
+	<Window.Resources>
+		<ResourceDictionary Source="Dictionary1.xaml"/>
+	</Window.Resources>
 	<Grid>
-		<Label x:Name="lblUserName" Content="Test" />
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="3*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+
+		<Border Grid.ColumnSpan="2" BorderBrush="{StaticResource raspberry}" BorderThickness="0 0 0 3">
+			<StackPanel>
+				<Label x:Name="lblUserName" FontSize="20" Foreground="{StaticResource whitewash}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+			</StackPanel>
+		</Border>
+
+		<ListBox x:Name="lbQuestions" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="1" BorderThickness="0" Background="{StaticResource lagoon}"/>
+
+		<Border Grid.ColumnSpan="2" Grid.Row="2" BorderBrush="{StaticResource raspberry}" BorderThickness="0 3 0 0">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="auto"/>
+				</Grid.ColumnDefinitions>
+
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+					<ProgressBar x:Name="pbSavedQues" Minimum="0" Width="400" Height="10" Background="{StaticResource saltwater}" Foreground="#35fc5c" BorderThickness="1" BorderBrush="Black"/>
+
+					<Label x:Name="lblSaved" Content="{Binding ElementName=pbSavedQues, Path=Value}" ContentStringFormat="{}{0} questions saved." Margin="0 2 0 0"/>
+				</StackPanel>
+
+				<Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Width="75" Margin="5">
+					<Button x:Name="btnSubmit" Content="Submit" Background="{StaticResource lagoon}" Click="btnSubmit_Click" />
+				</Border>
+
+			</Grid>
+		</Border>
+
 	</Grid>
 </Window>

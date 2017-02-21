@@ -23,7 +23,15 @@ namespace QuizProject
 		public MainWindow()
 		{
 			InitializeComponent();
-			lblUserName.Content = Quiz.userName;
+			lblUserName.Content = "Welcome " + Values.userName + ", good luck on The Quiz!";
+			pbSavedQues.Maximum = Values.numQuestions;
+
+		}
+
+
+		private void btnSubmit_Click(object sender, RoutedEventArgs e)
+		{
+			pbSavedQues.Value += 1;
 		}
 	}
 }

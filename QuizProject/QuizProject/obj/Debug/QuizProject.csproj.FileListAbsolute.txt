@@ -34,3 +34,4 @@ E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\ReportWindow.baml
 E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.g.resources
 E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.Properties.Resources.resources
 E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\QuizProject.csproj.GenerateResource.Cache
+E:\Programming\Git\GUIQuiz\QuizProject\QuizProject\obj\Debug\Dictionary1.baml

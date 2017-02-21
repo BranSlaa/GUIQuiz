@@ -26,7 +26,60 @@ namespace QuizProject
 
 		private void btnGo_Click(object sender, RoutedEventArgs e)
 		{
-			Quiz.userName = tbUserName.Text;
+			//if (Validate())
+				changeWindowToMain();
 		}
+
+		#region "functions"
+
+		private void passValuesToUtility()
+		{
+			Values.userName = tbUserName.Text;
+
+			ComboBoxItem numQuestions = (ComboBoxItem)cboNumQuestions.SelectedItem;
+			Values.numQuestions = int.Parse(numQuestions.Content.ToString());
+
+			ComboBoxItem difficulty = (ComboBoxItem)cboDifficulty.SelectedItem;
+			Values.difficulty = difficulty.Content.ToString();
+		}
+
+		private bool Validate()
+		{
+			bool valid = true;
+
+			if (string.IsNullOrWhiteSpace(tbUserName.Text))
+			{
+				valid = false;
+				tbUserName.BorderBrush = Colour.raspberry;
+			}
+			else
+				tbUserName.BorderBrush = Colour.lagoon;
+
+
+			if (cboDifficulty.SelectedIndex == -1)
+			{
+				valid = false;
+			}
+				
+
+			if (cboNumQuestions.SelectedIndex == -1)
+			{
+				valid = false;
+			}
+
+			return valid;
+		}
+
+
+		private void changeWindowToMain()
+		{
+			passValuesToUtility();
+
+			MainWindow Main = new MainWindow();
+			Main.Show();
+			this.Close();
+		}
+
+		#endregion
 	}
 }
