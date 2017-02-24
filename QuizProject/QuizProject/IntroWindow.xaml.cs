@@ -22,6 +22,12 @@ namespace QuizProject
 		public IntroWindow()
 		{
 			InitializeComponent();
+			this.Loaded += IntroWindow_Loaded;
+		}
+
+		public void IntroWindow_Loaded(object sender, RoutedEventArgs e)
+		{
+			this.DataContext = this;
 		}
 
 		private void btnGo_Click(object sender, RoutedEventArgs e)
@@ -69,7 +75,6 @@ namespace QuizProject
 
 			return valid;
 		}
-
 
 		private void changeWindowToMain()
 		{

@@ -6,6 +6,7 @@
 	<SolidColorBrush x:Key="saltwater" Color="#257985"/>
 	<SolidColorBrush x:Key="lagoon" Color="#5EA8A7"/>
 	<SolidColorBrush x:Key="whitewash" Color="#F5FFFF"/>
+	<BooleanToVisibilityConverter x:Key="boolToVis" />
 
 	<Style TargetType="Label">
 		<Setter Property="FontWeight" Value="DemiBold"/>
