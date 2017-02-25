@@ -32,7 +32,7 @@ namespace QuizProject
 
 		private void btnGo_Click(object sender, RoutedEventArgs e)
 		{
-			//if (Validate())
+			if (Validate())
 				changeWindowToMain();
 		}
 
