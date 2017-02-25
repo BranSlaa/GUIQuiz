@@ -4,10 +4,11 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:QuizProject"
+		xmlns:prop="clr-namespace:QuizProject.Properties"
 		WindowStartupLocation="CenterScreen"
 		mc:Ignorable="d"
 		Title="The Quiz"
-		Height="300" Width="400"
+		Height="350" Width="450"
 		Background="#257985"
 		>
 	<Window.Resources>
@@ -15,30 +16,62 @@
 	</Window.Resources>
 	<Grid>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="auto"/>
 			<ColumnDefinition Width="3*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="50"/>
+			<RowDefinition Height="auto"/>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="auto"/>
 		</Grid.RowDefinitions>
 
 		<Border Grid.ColumnSpan="2" BorderBrush="{StaticResource raspberry}" BorderThickness="0 0 0 3">
-			<StackPanel>
-				<Label x:Name="lblUserName" FontSize="20" Foreground="{StaticResource whitewash}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-			</StackPanel>
+			<Label x:Name="lblUserName" FontSize="15" Foreground="{StaticResource whitewash}" HorizontalAlignment="Center" VerticalAlignment="Center" />
 		</Border>
 
-		<ListBox x:Name="lstQuestions" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="1" BorderThickness="0" Background="{StaticResource lagoon}" SelectionChanged="lstQuestions_SelectionChanged"/>
 
-		<StackPanel Grid.Column="1" Grid.Row="1">
-			<Label x:Name="lblQuestion"/>
-			<RadioButton x:Name="rdoOption1" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}"/>
-			<RadioButton x:Name="rdoOption2" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}"/>
-			<RadioButton x:Name="rdoOption3" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}"/>
-			<RadioButton x:Name="rdoOption4" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}"/>
-		</StackPanel>
+		<ListBox x:Name="lstQuestions" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="1" BorderThickness="0" Background="{StaticResource lagoon}" SelectionChanged="lstQuestions_SelectionChanged">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<Image Height="20" Source="{Binding Path=m_saveIcon}" Margin="0 0 5 0"/>
+						<TextBlock Text="{Binding Path=m_name}"/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		<Grid Grid.Column="1" Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+
+			<StackPanel Grid.Row="0">
+				<Label x:Name="lblQuestion"/>
+				<RadioButton x:Name="rdoOption1"/>
+				<RadioButton x:Name="rdoOption2"/>
+				<RadioButton x:Name="rdoOption3"/>
+				<RadioButton x:Name="rdoOption4"/>
+			</StackPanel>
+
+			<Border Grid.Row="1" BorderBrush="{StaticResource raspberry}" BorderThickness="0 3 0 0" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}">
+				<Label Content="{x:Static prop:Resources.mustBeSaved}" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}"/>
+			</Border>
+
+			<StackPanel Orientation="Horizontal" Grid.Row="2" >
+				<Border BorderBrush="Black" BorderThickness="2" Width="45" Margin="5" HorizontalAlignment="Left" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}">
+					<Button x:Name="btnSave" Content="{x:Static prop:Resources.save}" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}" Height="19" VerticalAlignment="Top" Click="btnSave_Click"/>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="2" Width="65" Margin="5" HorizontalAlignment="Left" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}">
+					<Button x:Name="btnPrevious" Content="{x:Static prop:Resources.previous}" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}" Height="19" VerticalAlignment="Top" Click="btnPrevious_Click"/>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="2" Width="45" Margin="5" HorizontalAlignment="Left" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}">
+					<Button x:Name="btnNext" Content="{x:Static prop:Resources.next}" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}" Height="19" VerticalAlignment="Top" Click="btnNext_Click"/>
+				</Border>
+			</StackPanel>
+		</Grid>
 
 		<Border Grid.ColumnSpan="2" Grid.Row="2" BorderBrush="{StaticResource raspberry}" BorderThickness="0 3 0 0">
 			<Grid>
@@ -50,11 +83,11 @@
 				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 					<ProgressBar x:Name="pbSavedQues" Minimum="0" Width="175" Height="10" Background="{StaticResource saltwater}" Foreground="#35fc5c" BorderThickness="1" BorderBrush="Black"/>
 
-					<Label x:Name="lblSaved" Content="{Binding ElementName=pbSavedQues, Path=Value}" ContentStringFormat="{}{0} questions saved." Margin="0 2 0 0"/>
+					<Label x:Name="lblSaved" Content="{Binding ElementName=pbSavedQues, Path=Value}" ContentStringFormat="{x:Static prop:Resources.xQueSaved}" Margin="0 2 0 0"/>
 				</StackPanel>
 
 				<Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Width="75" Margin="5">
-					<Button x:Name="btnSubmit" Content="Submit" Background="{StaticResource lagoon}" Click="btnSubmit_Click" />
+					<Button x:Name="btnSubmit" Content="{x:Static prop:Resources.submit}" Click="btnSubmit_Click" />
 				</Border>
 
 			</Grid>

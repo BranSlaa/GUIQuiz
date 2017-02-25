@@ -4,12 +4,13 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:QuizProject"
+		xmlns:prop="clr-namespace:QuizProject.Properties"
 		WindowStartupLocation="CenterScreen"
 		mc:Ignorable="d"
 		Title="IntroWindow" 
 		Height="200" Width="400"
 		ResizeMode="NoResize"
-		Background="#5EA8A7"
+		Background="#257985"
 		>
 	<Window.Resources>
 		<ResourceDictionary Source="Dictionary1.xaml"/>
@@ -30,11 +31,11 @@
 
 		<Image Source="QuizImage.png" Height="150" VerticalAlignment="Bottom" Grid.RowSpan="4" />
 
-		<Label Content="User Name:" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1"/>
-		<Label Content="Number of Questions:" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1"/>
-		<Label Content="Difficulty:" VerticalAlignment="Top"  HorizontalAlignment="Right" Grid.Column="1" Grid.Row="2"/>
+		<Label Content="{x:Static prop:Resources.userName}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1"/>
+		<Label Content="{x:Static prop:Resources.numOfQues}" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1"/>
+		<Label Content="{x:Static prop:Resources.diff}" VerticalAlignment="Top"  HorizontalAlignment="Right" Grid.Column="1" Grid.Row="2"/>
 
-		<TextBox x:Name="tbUserName" VerticalAlignment="Bottom" Margin="5" Grid.Column="2" />
+		<TextBox x:Name="tbUserName" VerticalAlignment="Bottom" Margin="5" Grid.Column="2" MaxLength="15" TextWrapping="Wrap"/>
 		<ComboBox x:Name="cboNumQuestions" VerticalAlignment="Center" Margin="5" Grid.Column="2" Grid.Row="1">
 			<ComboBoxItem IsSelected="True">5</ComboBoxItem>
 			<ComboBoxItem>10</ComboBoxItem>
@@ -47,7 +48,7 @@
 		</ComboBox>
 
 		<Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Margin="5">
-			<Button x:Name="btnGo" Content="Go to Quiz" Click="btnGo_Click" />
+			<Button x:Name="btnGo" Content="{x:Static prop:Resources.goToQuiz}" Click="btnGo_Click" />
 		</Border>
 		
 

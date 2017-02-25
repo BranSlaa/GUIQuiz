@@ -4,10 +4,68 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:QuizProject"
+		xmlns:prop="clr-namespace:QuizProject.Properties"
 		WindowStartupLocation="CenterScreen"
 		mc:Ignorable="d"
-		Title="ReportWindow" Height="300" Width="300">
+		Title="The Quiz"
+		Height="310" Width="400"
+		Background="#257985"
+		>
+	<Window.Resources>
+		<ResourceDictionary Source="Dictionary1.xaml"/>
+	</Window.Resources>
+
 	<Grid>
-		
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="auto"/>
+			<ColumnDefinition Width="3*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+
+		<Border Grid.ColumnSpan="2" BorderBrush="{StaticResource raspberry}" BorderThickness="0 0 0 3">
+			<StackPanel>
+				<Label x:Name="lblUserName" FontSize="15" Foreground="{StaticResource whitewash}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+				<Label x:Name="lblResult" FontSize="15" Foreground="{StaticResource whitewash}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+			</StackPanel>
+		</Border>
+
+
+		<ListBox x:Name="lstQuestions" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="1" BorderThickness="0" Background="{StaticResource lagoon}" SelectionChanged="lstQuestions_SelectionChanged">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<Image Height="20" Source="{Binding Path=m_correctIcon}" Margin="0 0 5 0"/>
+						<TextBlock Text="{Binding Path=m_name}"/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		<Grid Grid.Column="1" Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+
+			<StackPanel Grid.Row="0">
+				<Label x:Name="lblQuestion" HorizontalAlignment="Left" Width="200" Margin="5 0"/>
+				<Label x:Name="lblOption1" HorizontalAlignment="Left" Width="200" Margin="5 1"/>
+				<Label x:Name="lblOption2" HorizontalAlignment="Left" Width="200" Margin="5 1"/>
+				<Label x:Name="lblOption3" HorizontalAlignment="Left" Width="200" Margin="5 1"/>
+				<Label x:Name="lblOption4" HorizontalAlignment="Left" Width="200" Margin="5 1"/>
+			</StackPanel>
+		</Grid>
+
+		<Border Grid.ColumnSpan="2" Grid.Row="2" BorderBrush="{StaticResource raspberry}" BorderThickness="0 3 0 0">
+			<Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Width="75" Margin="5" HorizontalAlignment="Right">
+				<Button x:Name="btnNewQuiz" Content="{x:Static prop:Resources.newQuiz}" Click="btnNewQuiz_Click" />
+			</Border>
+		</Border>
+
 	</Grid>
 </Window>

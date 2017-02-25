@@ -12,10 +12,20 @@
 		<Setter Property="FontWeight" Value="DemiBold"/>
 	</Style>
 
+
+	<!--Margin="5" FontSize="12" FontWeight="Medium" Visibility="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}"-->
+	<Style TargetType="RadioButton">
+		<Setter Property="Margin" Value="5" />
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="FontWeight" Value="Medium" />
+		<Setter Property="Visibility" Value="{Binding VisibilityProperty, Converter={StaticResource boolToVis}}" />
+	</Style>
+
+	
 	<Style TargetType="{x:Type Button}">
 		<Setter Property="FontWeight" Value="SemiBold"/>
 		<Setter Property="FontSize" Value="14"/>
-		<Setter Property="Background" Value="#257985"/>
+		<Setter Property="Background" Value="{StaticResource lagoon}"/>
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
